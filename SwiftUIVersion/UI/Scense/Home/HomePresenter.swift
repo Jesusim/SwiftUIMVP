@@ -13,7 +13,7 @@ final class HomePresenter: Presenter<HomeCoordinator> {
     @Published var message: String = ""
     
     func showText() {
-        message = "HUI"
+        message = "Hello man"
     }
     
     func goToDetail(_ isPresented: Binding<Bool>) -> some View {

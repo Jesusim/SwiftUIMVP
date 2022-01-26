@@ -29,10 +29,6 @@ struct HomeView: View {
             NavigationButton(contentView: Text("Go Detail Red")) { isPresented in
                 presentr.goToDetail(isPresented)
             }
-//            Text("HOME VIEW")
-//            NavigationLink(destination: presentr.goToDetail()) {
-//                Text("Do Something")
-//            }
         }
     }
 }
