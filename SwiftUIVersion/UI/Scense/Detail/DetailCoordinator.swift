@@ -12,7 +12,7 @@ import SwiftUI
 final class DetailCoordinator: Coordinator<DetailView> {
     
     override var presentationStyle: NavigationStyle {
-        return .parent
+        return .nextView
     }
 
     override func instantiateViewController() -> DetailView {
