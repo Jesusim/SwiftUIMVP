@@ -9,10 +9,12 @@ import SwiftUI
 
 struct DetailView: View {
     var body: some View {
-        Text("Detail").foregroundColor(.red)
-        Text("Detail")
-        Text("Detail")
-        Text("Detail")
+        VStack {
+            Text("Detail").foregroundColor(.red)
+            Text("Detail")
+            Text("Detail")
+            Text("Detail")
+        }
     }
 }
 

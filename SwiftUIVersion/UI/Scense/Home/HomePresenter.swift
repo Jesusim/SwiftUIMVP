@@ -8,9 +8,15 @@
 import Foundation
 import SwiftUI
 
+struct Movie: Identifiable {
+    var id: String = UUID().uuidString
+    var name: String
+}
+
 final class HomePresenter: Presenter<HomeCoordinator> {
     
     @Published var message: String = ""
+    @Published var movies: [Movie] = [Movie(name: "Master")]
     
     func showText() {
         message = "Hello man"

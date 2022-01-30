@@ -119,7 +119,7 @@ class Coordinator<V: View>: Coordinating {
     func start() -> some View {
         if let isPresented = isPresented {
             if presentationStyle == .nextView {
-                return AnyView(NavigationLinkWrapper(destination: instantiateViewController(), isPresented: isPresented, isDetailLink: true))
+                return AnyView(NavigationLinkWrapper(destination: instantiateViewController(), isPresented: isPresented))
             } else {
                 return AnyView(ModalLinkWrapper(destination: instantiateViewController(), isPresented: isPresented))
             }

@@ -19,14 +19,12 @@ struct HomeView: View {
     }
     
     var body: some View {
-        VStack {
-            Text(presentr.message)
-            Button {
-                presentr.showText()
-            } label: {
-                Text("Show Text")
+        List {
+            ForEach(presentr.movies) { item in
+                Text(item.name)
             }
-            NavigationButton(contentView: Text("Go Detail Red")) { isPresented in
+        }.navigationBarTitle("Movies list").toolbar {
+            NavigationButton(contentView: Label("Add movie", systemImage: "square.and.pencil")) { isPresented in
                 presentr.goToDetail(isPresented)
             }
         }
