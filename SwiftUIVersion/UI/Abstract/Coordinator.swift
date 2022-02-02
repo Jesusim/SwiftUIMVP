@@ -116,15 +116,16 @@ class Coordinator<V: View>: Coordinating {
     }
 
     @discardableResult
-    func start() -> some View {
+    @ViewBuilder func start() -> some View {
         if let isPresented = isPresented {
-            if presentationStyle == .nextView {
-                return AnyView(NavigationLinkWrapper(destination: instantiateViewController(), isPresented: isPresented))
-            } else {
-                return AnyView(ModalLinkWrapper(destination: instantiateViewController(), isPresented: isPresented))
+            switch presentationStyle {
+            case .nextView, .parent:
+                NavigationLinkWrapper(destination: instantiateViewController(), isPresented: isPresented)
+            case .modalView:
+                ModalLinkWrapper(destination: instantiateViewController(), isPresented: isPresented)
             }
         } else {
-            return AnyView(NavigationView { instantiateViewController() } )
+            NavigationView { instantiateViewController() }
         }
     }
     

@@ -57,6 +57,6 @@ struct NavigationLinkWrapper<T: View>: View {
     var body: some View {
         NavigationLink(destination: destination, isActive: $isPresented) {
             EmptyView()
-        }.isDetailLink(isDetailLink)
+        }.isDetailLink(isDetailLink).frame(width: 0).opacity(0.0)
     }
 }
