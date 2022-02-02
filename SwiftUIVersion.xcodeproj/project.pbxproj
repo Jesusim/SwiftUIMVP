@@ -15,6 +15,8 @@
 		2027E16E2701C2EA0074151D /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2027E16D2701C2EA0074151D /* HomeCoordinator.swift */; };
 		2027E1702701C36F0074151D /* HomeAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2027E16F2701C36F0074151D /* HomeAssembly.swift */; };
 		2042E6C0279AAECF000F32C2 /* AppStartMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2042E6BF279AAECF000F32C2 /* AppStartMode.swift */; };
+		2052DE3027AAC7BD003D8FEE /* CreateNewMoviesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2052DE2F27AAC7BD003D8FEE /* CreateNewMoviesView.swift */; };
+		2052DE3227AAC85C003D8FEE /* CreateNewMoviesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2052DE3127AAC85C003D8FEE /* CreateNewMoviesAssembly.swift */; };
 		205FC4EB26CB6D20003E6DEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 205FC4EA26CB6D20003E6DEF /* Assets.xcassets */; };
 		205FC4EE26CB6D20003E6DEF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 205FC4ED26CB6D20003E6DEF /* Preview Assets.xcassets */; };
 		205FC4F326CB6D20003E6DEF /* SwiftUITestProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 205FC4F126CB6D20003E6DEF /* SwiftUITestProject.xcdatamodeld */; };
@@ -56,6 +58,8 @@
 		2027E16D2701C2EA0074151D /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		2027E16F2701C36F0074151D /* HomeAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAssembly.swift; sourceTree = "<group>"; };
 		2042E6BF279AAECF000F32C2 /* AppStartMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStartMode.swift; sourceTree = "<group>"; };
+		2052DE2F27AAC7BD003D8FEE /* CreateNewMoviesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewMoviesView.swift; sourceTree = "<group>"; };
+		2052DE3127AAC85C003D8FEE /* CreateNewMoviesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewMoviesAssembly.swift; sourceTree = "<group>"; };
 		205FC4E326CB6D1D003E6DEF /* SwiftUIVersionTestProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIVersionTestProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		205FC4EA26CB6D20003E6DEF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		205FC4ED26CB6D20003E6DEF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -145,10 +149,20 @@
 		2027E14D26FC64820074151D /* Scense */ = {
 			isa = PBXGroup;
 			children = (
+				2052DE2E27AAC758003D8FEE /* CreateNewMovies */,
 				20C6314B2797FB0300951D8F /* Detail */,
 				20C6314A2797FAE700951D8F /* Home */,
 			);
 			path = Scense;
+			sourceTree = "<group>";
+		};
+		2052DE2E27AAC758003D8FEE /* CreateNewMovies */ = {
+			isa = PBXGroup;
+			children = (
+				2052DE3127AAC85C003D8FEE /* CreateNewMoviesAssembly.swift */,
+				2052DE2F27AAC7BD003D8FEE /* CreateNewMoviesView.swift */,
+			);
+			path = CreateNewMovies;
 			sourceTree = "<group>";
 		};
 		205FC4DA26CB6D1D003E6DEF = {
@@ -386,6 +400,7 @@
 			files = (
 				205FC4F326CB6D20003E6DEF /* SwiftUITestProject.xcdatamodeld in Sources */,
 				2027E14726FC4D5E0074151D /* AutoAssembly.swift in Sources */,
+				2052DE3027AAC7BD003D8FEE /* CreateNewMoviesView.swift in Sources */,
 				2027E16C2701C0D40074151D /* Coordinator.swift in Sources */,
 				20C798F427A11BF100A05F4F /* Presenter.swift in Sources */,
 				2027E15126FC64EB0074151D /* HomeView.swift in Sources */,
@@ -395,6 +410,7 @@
 				20C631582799695E00951D8F /* DetailView.swift in Sources */,
 				20C798F227A10F3600A05F4F /* AssociatedObject.swift in Sources */,
 				20C6314D2797FBD400951D8F /* AppCoordinator.swift in Sources */,
+				2052DE3227AAC85C003D8FEE /* CreateNewMoviesAssembly.swift in Sources */,
 				20C798F0279EA7C900A05F4F /* NavigationLinkWrapper.swift in Sources */,
 				2027E1702701C36F0074151D /* HomeAssembly.swift in Sources */,
 				2042E6C0279AAECF000F32C2 /* AppStartMode.swift in Sources */,

@@ -18,10 +18,6 @@ final class HomePresenter: Presenter<HomeCoordinator> {
     @Published var message: String = ""
     @Published var movies: [Movie] = [Movie(name: "Master")]
     
-    func showText() {
-        message = "Hello man"
-    }
-    
     func goToDetail(_ isPresented: Binding<Bool>) -> some View {
         return coordinator.goToDetail(isPresented)
     }
