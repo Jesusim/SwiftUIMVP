@@ -10,28 +10,28 @@ import Swinject
 
 struct HomeView: View {
     
-    @ObservedObject var presentr: HomePresenter
+    @ObservedObject var presenter: HomePresenter
 
     init(
-        presentr: HomePresenter
+        presenter: HomePresenter
     ) {
-        self.presentr = presentr
+        self.presenter = presenter
     }
     
     var body: some View {
         List {
-            ForEach(presentr.movies) { item in
+            ForEach(presenter.movies) { item in
                 NavigationButton(
                     contentView: Text(item.name)
                 ) { isPresented in
-                    presentr.goToDetail(isPresented)
+                    presenter.goToDetail(isPresented)
                 }.foregroundColor(.red)
             }
         }.navigationBarTitle("Movies list").toolbar {
             NavigationButton(
                 contentView: Label("Add movie", systemImage: "square.and.pencil")
             ) { isPresented in
-                presentr.goToCreateNewMovies(isPresented)
+                presenter.goToCreateNewMovies(isPresented)
             }
         }
     }

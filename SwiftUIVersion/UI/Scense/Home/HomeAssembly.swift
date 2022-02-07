@@ -22,11 +22,11 @@ final class HomeAssembly: AutoAssembly {
         container.register(
             HomeView.self
         ) { (resolver, coordinator: HomeCoordinator) in
-            let presentr = resolver.resolve(
+            let presenter = resolver.resolve(
                 HomePresenter.self,
                 argument: coordinator
             )!
-            return HomeView(presentr: presentr)
+            return HomeView(presenter: presenter)
         }
     }
     

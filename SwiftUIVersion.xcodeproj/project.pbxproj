@@ -32,6 +32,7 @@
 		20C798F227A10F3600A05F4F /* AssociatedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C798F127A10F3600A05F4F /* AssociatedObject.swift */; };
 		20C798F427A11BF100A05F4F /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C798F327A11BF100A05F4F /* Presenter.swift */; };
 		20C9400B27B0E93D002606B1 /* CreateNewMoviesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C9400A27B0E93D002606B1 /* CreateNewMoviesCoordinator.swift */; };
+		20C9400D27B0F110002606B1 /* CreateNewMoviesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C9400C27B0F110002606B1 /* CreateNewMoviesPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		20C798F127A10F3600A05F4F /* AssociatedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssociatedObject.swift; sourceTree = "<group>"; };
 		20C798F327A11BF100A05F4F /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		20C9400A27B0E93D002606B1 /* CreateNewMoviesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewMoviesCoordinator.swift; sourceTree = "<group>"; };
+		20C9400C27B0F110002606B1 /* CreateNewMoviesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewMoviesPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 			children = (
 				2052DE3127AAC85C003D8FEE /* CreateNewMoviesAssembly.swift */,
 				20C9400A27B0E93D002606B1 /* CreateNewMoviesCoordinator.swift */,
+				20C9400C27B0F110002606B1 /* CreateNewMoviesPresenter.swift */,
 				2052DE2F27AAC7BD003D8FEE /* CreateNewMoviesView.swift */,
 			);
 			path = CreateNewMovies;
@@ -419,6 +422,7 @@
 				2027E1702701C36F0074151D /* HomeAssembly.swift in Sources */,
 				2042E6C0279AAECF000F32C2 /* AppStartMode.swift in Sources */,
 				2027E1682701B5C90074151D /* SwinjectConfigurator.swift in Sources */,
+				20C9400D27B0F110002606B1 /* CreateNewMoviesPresenter.swift in Sources */,
 				20C631562799691F00951D8F /* DetailAssembly.swift in Sources */,
 				20C631542798433E00951D8F /* HomePresenter.swift in Sources */,
 			);
@@ -582,7 +586,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUIVersion/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/SwiftUIVersion/Resources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -605,7 +609,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUIVersion/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/SwiftUIVersion/Resources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

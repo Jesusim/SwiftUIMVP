@@ -10,7 +10,7 @@ import SwiftUI
 
 final class CreateNewMoviesAssembly: AutoAssembly {
     
-    dynamic func homeCoordinator() {
+    dynamic func createNewMoviesCoordinator() {
         container.register(
             CreateNewMoviesCoordinator.self
         ) { (resolver, isPresented: Binding<Bool>) -> CreateNewMoviesCoordinator in
@@ -19,11 +19,23 @@ final class CreateNewMoviesAssembly: AutoAssembly {
         }
     }
     
-    dynamic func homeController() {
+    dynamic func createNewMoviesController() {
         container.register(
             CreateNewMoviesView.self
-        ) { (resolver) in
-            return CreateNewMoviesView()
+        ) { (resolver, coordinator: CreateNewMoviesCoordinator) in
+            let presenter = resolver.resolve(
+                CreateNewMoviesPresenter.self,
+                argument: coordinator
+            )!
+            return CreateNewMoviesView(presenter: presenter)
+        }
+    }
+    
+    dynamic func createNewMoviesPresenter() {
+        container.register(
+            CreateNewMoviesPresenter.self
+        ) { (resolver, coordinator: CreateNewMoviesCoordinator) in
+            return CreateNewMoviesPresenter(coordinator: coordinator)
         }
     }
     

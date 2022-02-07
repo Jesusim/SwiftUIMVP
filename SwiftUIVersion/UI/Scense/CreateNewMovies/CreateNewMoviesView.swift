@@ -8,15 +8,24 @@
 import SwiftUI
 
 struct CreateNewMoviesView: View {
+    
+    @ObservedObject var presenter: CreateNewMoviesPresenter
+
+    init(
+        presenter: CreateNewMoviesPresenter
+    ) {
+        self.presenter = presenter
+    }
+    
     var body: some View {
         VStack {
-            Text("Here new")
+            HStack(alignment: .center) {
+                Text("Movie title:")
+                TextField("Put here title", text: $presenter.title)
+                    .padding([.top, .bottom, .trailing], 8)
+                    .textFieldStyle(.roundedBorder)
+            }
+            .padding(.horizontal, 5)
         }.navigationTitle("Create movies")
-    }
-}
-
-struct CreateNewMoviesView_Previews: PreviewProvider {
-    static var previews: some View {
-        CreateNewMoviesView()
     }
 }

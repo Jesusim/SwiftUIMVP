@@ -15,7 +15,8 @@ final class CreateNewMoviesCoordinator: Coordinator<CreateNewMoviesView> {
 
     override func instantiateViewController() -> CreateNewMoviesView {
         return resolver.resolve(
-            CreateNewMoviesView.self
+            CreateNewMoviesView.self,
+            argument: self
         )!
     }
     

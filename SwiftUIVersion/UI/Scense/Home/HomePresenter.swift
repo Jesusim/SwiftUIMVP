@@ -15,7 +15,6 @@ struct Movie: Identifiable {
 
 final class HomePresenter: Presenter<HomeCoordinator> {
     
-    @Published var message: String = ""
     @Published var movies: [Movie] = [Movie(name: "Master")]
     
     func goToDetail(_ isPresented: Binding<Bool>) -> some View {
