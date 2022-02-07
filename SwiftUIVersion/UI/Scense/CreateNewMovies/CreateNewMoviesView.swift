@@ -10,7 +10,7 @@ import SwiftUI
 struct CreateNewMoviesView: View {
     var body: some View {
         VStack {
-            Text("Here new movie")
+            Text("Here")
         }.navigationTitle("Create movies")
     }
 }
