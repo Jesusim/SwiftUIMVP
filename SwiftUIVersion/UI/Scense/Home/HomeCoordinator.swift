@@ -25,5 +25,13 @@ final class HomeCoordinator: Coordinator<HomeView> {
         )!
         return openChild(to: detailCoord)
     }
+    
+    func goToCreateNewMovies(_ isPresented: Binding<Bool>) -> some View {
+        let detailCoord = resolver.resolve(
+            CreateNewMoviesCoordinator.self,
+            argument: isPresented
+        )!
+        return openChild(to: detailCoord)
+    }
 
 }

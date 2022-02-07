@@ -31,6 +31,7 @@
 		20C798F0279EA7C900A05F4F /* NavigationLinkWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C798EF279EA7C900A05F4F /* NavigationLinkWrapper.swift */; };
 		20C798F227A10F3600A05F4F /* AssociatedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C798F127A10F3600A05F4F /* AssociatedObject.swift */; };
 		20C798F427A11BF100A05F4F /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C798F327A11BF100A05F4F /* Presenter.swift */; };
+		20C9400B27B0E93D002606B1 /* CreateNewMoviesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C9400A27B0E93D002606B1 /* CreateNewMoviesCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		20C798EF279EA7C900A05F4F /* NavigationLinkWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLinkWrapper.swift; sourceTree = "<group>"; };
 		20C798F127A10F3600A05F4F /* AssociatedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssociatedObject.swift; sourceTree = "<group>"; };
 		20C798F327A11BF100A05F4F /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
+		20C9400A27B0E93D002606B1 /* CreateNewMoviesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewMoviesCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				2052DE3127AAC85C003D8FEE /* CreateNewMoviesAssembly.swift */,
+				20C9400A27B0E93D002606B1 /* CreateNewMoviesCoordinator.swift */,
 				2052DE2F27AAC7BD003D8FEE /* CreateNewMoviesView.swift */,
 			);
 			path = CreateNewMovies;
@@ -402,6 +405,7 @@
 				2027E14726FC4D5E0074151D /* AutoAssembly.swift in Sources */,
 				2052DE3027AAC7BD003D8FEE /* CreateNewMoviesView.swift in Sources */,
 				2027E16C2701C0D40074151D /* Coordinator.swift in Sources */,
+				20C9400B27B0E93D002606B1 /* CreateNewMoviesCoordinator.swift in Sources */,
 				20C798F427A11BF100A05F4F /* Presenter.swift in Sources */,
 				2027E15126FC64EB0074151D /* HomeView.swift in Sources */,
 				2027E16E2701C2EA0074151D /* HomeCoordinator.swift in Sources */,

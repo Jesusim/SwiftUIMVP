@@ -26,13 +26,12 @@ struct HomeView: View {
                 ) { isPresented in
                     presentr.goToDetail(isPresented)
                 }.foregroundColor(.red)
-                
             }
         }.navigationBarTitle("Movies list").toolbar {
             NavigationButton(
                 contentView: Label("Add movie", systemImage: "square.and.pencil")
             ) { isPresented in
-                presentr.goToDetail(isPresented)
+                presentr.goToCreateNewMovies(isPresented)
             }
         }
     }

@@ -22,4 +22,8 @@ final class HomePresenter: Presenter<HomeCoordinator> {
         return coordinator.goToDetail(isPresented)
     }
     
+    func goToCreateNewMovies(_ isPresented: Binding<Bool>) -> some View {
+        return coordinator.goToCreateNewMovies(isPresented)
+    }
+    
 }
