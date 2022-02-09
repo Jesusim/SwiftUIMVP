@@ -15,7 +15,7 @@ final class DetailCoordinator: Coordinator<DetailView> {
         return .nextView
     }
 
-    override func instantiateViewController() -> DetailView {
+    override func instantiateView() -> DetailView {
         return resolver.resolve(
             DetailView.self
         )!

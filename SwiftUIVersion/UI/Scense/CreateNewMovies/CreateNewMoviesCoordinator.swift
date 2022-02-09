@@ -14,7 +14,7 @@ final class CreateNewMoviesCoordinator: Coordinator<CreateNewMoviesView> {
         return .nextView
     }
 
-    override func instantiateViewController() -> CreateNewMoviesView {
+    override func instantiateView() -> CreateNewMoviesView {
         return resolver.resolve(
             CreateNewMoviesView.self,
             argument: self
@@ -28,10 +28,6 @@ final class CreateNewMoviesCoordinator: Coordinator<CreateNewMoviesView> {
             image
         )!
         return coordinate(to: child)
-    }
-    
-    deinit {
-        print("\(identifier) deinit CreateNewMoviesCoordinator")
     }
     
 }

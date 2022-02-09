@@ -11,7 +11,7 @@ import SwiftUI
 
 final class HomeCoordinator: Coordinator<HomeView> {
     
-    override func instantiateViewController() -> HomeView {
+    override func instantiateView() -> HomeView {
         return resolver.resolve(
             HomeView.self,
             argument: self
@@ -32,10 +32,6 @@ final class HomeCoordinator: Coordinator<HomeView> {
             argument: isPresented
         )!
         return coordinate(to: newMovies)
-    }
-    
-    deinit {
-        print("\(identifier) deinit HomeCoordinator")
     }
     
 }

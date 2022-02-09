@@ -116,21 +116,37 @@ class Coordinator<V: View>: Coordinating {
     }
 
     @discardableResult
-    @ViewBuilder func start() -> some View {
+    func start() -> some View {
+        loadView()
+            .onAppear {
+                self.onAppear()
+            }
+            .onDisappear {
+                self.onDisappear()
+                self.shouldStop()
+            }
+    }
+    
+    @ViewBuilder
+    func loadView() -> some View {
         if let isPresented = isPresented {
             switch presentationStyle {
             case .nextView, .parent:
-                NavigationLinkWrapper(destination: instantiateViewController(), isPresented: isPresented)
+                NavigationLinkWrapper(destination: instantiateView(), isPresented: isPresented)
             case .modalView:
-                ModalLinkWrapper(destination: instantiateViewController(), isPresented: isPresented)
+                ModalLinkWrapper(destination: instantiateView(), isPresented: isPresented)
             }
         } else {
-            NavigationView { instantiateViewController() }
+            NavigationView { instantiateView() }
         }
     }
     
-    func instantiateViewController() -> V {
+    func instantiateView() -> V {
         preconditionFailure("Необходимо переопределить эту функции в наследнике!")
     }
+    
+    func onAppear() {}
+    
+    func onDisappear() {}
     
 }

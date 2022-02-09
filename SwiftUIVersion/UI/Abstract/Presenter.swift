@@ -17,6 +17,5 @@ class Presenter<C: Coordinating>: ObservableObject {
     
     deinit {
         coordinator?.shouldStop()
-        print("\(coordinator?.identifier.description ?? "nil") deinit \(Self.self)")
     }
 }

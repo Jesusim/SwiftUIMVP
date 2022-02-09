@@ -16,16 +16,12 @@ final class FullScreenPictureCoordinator: Coordinator<FullScreenPicture> {
         return .nextView
     }
 
-    override func instantiateViewController() -> FullScreenPicture {
+    override func instantiateView() -> FullScreenPicture {
         return resolver.resolve(
             FullScreenPicture.self,
             arguments: self,
             image
         )!
     }
-    
-    deinit {
-        print("\(identifier) deinit FullScreenPictureCoordinator")
-    }
-    
+
 }
