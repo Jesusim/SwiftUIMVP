@@ -18,11 +18,11 @@ final class HomePresenter: Presenter<HomeCoordinator> {
     @Published var movies: [Movie] = [Movie(name: "Master")]
     
     func goToDetail(_ isPresented: Binding<Bool>) -> some View {
-        return coordinator.goToDetail(isPresented)
+        return coordinator?.goToDetail(isPresented)
     }
     
     func goToCreateNewMovies(_ isPresented: Binding<Bool>) -> some View {
-        return coordinator.goToCreateNewMovies(isPresented)
+        return coordinator?.goToCreateNewMovies(isPresented)
     }
     
 }

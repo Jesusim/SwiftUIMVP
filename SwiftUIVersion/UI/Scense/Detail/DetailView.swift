@@ -13,7 +13,6 @@ struct DetailView: View {
             Text("Detail").foregroundColor(.red)
             Text("Detail")
             Text("Detail")
-            Text("Detail")
         }
     }
 }

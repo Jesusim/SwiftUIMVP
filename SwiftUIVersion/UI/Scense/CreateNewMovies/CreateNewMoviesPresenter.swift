@@ -11,6 +11,10 @@ import SwiftUI
 final class CreateNewMoviesPresenter: Presenter<CreateNewMoviesCoordinator> {
     
     @Published var title: String = ""
+    @Published var description: String = ""
     
+    func openImageForFullScreen(_ isPresented: Binding<Bool>, image: Binding<UIImage?>) -> some View {
+        coordinator?.openImageForFullScreen(isPresented, image: image)
+    }
     
 }

@@ -62,7 +62,7 @@ extension Coordinating {
         set { setAssociatedObject(newValue, for: &childrenKey, policy: .weak) }
     }
     
-    func openChild<T: Coordinating>(to coordinator: T) -> some View {
+    func coordinate<T: Coordinating>(to coordinator: T) -> some View {
         store(child: coordinator)
         coordinator.parent = self as? T.P
         return coordinator.start()

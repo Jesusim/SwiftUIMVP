@@ -23,15 +23,19 @@ final class HomeCoordinator: Coordinator<HomeView> {
             DetailCoordinator.self,
             argument: isPresented
         )!
-        return openChild(to: detailCoord)
+        return coordinate(to: detailCoord)
     }
     
     func goToCreateNewMovies(_ isPresented: Binding<Bool>) -> some View {
-        let detailCoord = resolver.resolve(
+        let newMovies = resolver.resolve(
             CreateNewMoviesCoordinator.self,
             argument: isPresented
         )!
-        return openChild(to: detailCoord)
+        return coordinate(to: newMovies)
     }
-
+    
+    deinit {
+        print("\(identifier) deinit HomeCoordinator")
+    }
+    
 }

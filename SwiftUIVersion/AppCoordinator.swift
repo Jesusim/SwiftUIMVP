@@ -33,7 +33,7 @@ final class AppCoordinator: Coordinating, AppCordinating {
         let homeView = resolver.resolve(
             HomeCoordinator.self
         )!
-        return homeView.start()
+        return coordinate(to: homeView)
     }
     
 }

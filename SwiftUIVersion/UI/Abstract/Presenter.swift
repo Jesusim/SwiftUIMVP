@@ -6,15 +6,17 @@
 //
 
 import Foundation
+import SwiftUI
 
 class Presenter<C: Coordinating>: ObservableObject {
-    private(set) var coordinator: C
+    private(set) weak var coordinator: C?
     
     init(coordinator: C) {
         self.coordinator = coordinator
     }
     
     deinit {
-        coordinator.shouldStop()
+        coordinator?.shouldStop()
+        print("\(coordinator?.identifier.description ?? "nil") deinit \(Self.self)")
     }
 }
