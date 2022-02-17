@@ -60,13 +60,13 @@ extension Coordinating {
         get { associatedObject(for: &childrenKey) }
         set { setAssociatedObject(newValue, for: &childrenKey, policy: .weak) }
     }
-
+    
     func coordinate<T: Coordinating>(to coordinator: T) -> some View {
         store(child: coordinator)
         coordinator.parent = self as? T.P
         return coordinator.start()
     }
-
+    
     func stop() {
         children.removeAll()
         parent?.free(child: self)
@@ -81,9 +81,9 @@ class Coordinator<V: View>: Coordinating {
     enum NavigationStyle {
         
         case modalView
-      
+        
         case nextView
-       
+        
         case parent
     }
     
@@ -95,11 +95,12 @@ class Coordinator<V: View>: Coordinating {
     
     /// Резольвер контейнера Swinject.
     let resolver: Resolver
-
+    
     init(
         _ resolver: Resolver
     ) {
         self.resolver = resolver
+        instantiateChildrenCoordinate()
     }
     
     init(
@@ -108,18 +109,12 @@ class Coordinator<V: View>: Coordinating {
     ) {
         self.resolver = resolver
         self.isPresented = isPresented
-    }
-
-    @discardableResult
-    func start() -> some View {
-        loadView()
-            .onAppear {
-                self.instantiateChildrenCoordinate()
-            }
+        instantiateChildrenCoordinate()
     }
     
+    @discardableResult
     @ViewBuilder
-    func loadView() -> some View {
+    func start() -> some View {
         if let isPresented = isPresented {
             switch presentationStyle {
             case .nextView, .parent:
