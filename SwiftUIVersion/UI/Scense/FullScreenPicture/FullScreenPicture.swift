@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FullScreenPicture: View {
     
-    var presenter: FullScreenPicturePresenter
+    @ObservedObject var presenter: FullScreenPicturePresenter
     var image: Binding<UIImage?> = .constant(UIImage(named: "no_image")!)
     
     init(presenter: FullScreenPicturePresenter, image: Binding<UIImage?>) {
@@ -19,7 +19,6 @@ struct FullScreenPicture: View {
     
     var body: some View {
         VStack {
-            Text("Image")
             Image(uiImage: image.wrappedValue!)
                 .resizable()
         }

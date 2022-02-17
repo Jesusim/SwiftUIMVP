@@ -26,12 +26,17 @@ final class HomeCoordinator: Coordinator<HomeView> {
         return coordinate(to: detailCoord)
     }
     
-    func goToCreateNewMovies(_ isPresented: Binding<Bool>) -> some View {
-        let newMovies = resolver.resolve(
-            CreateNewMoviesCoordinator.self,
-            argument: isPresented
+    var createNewMoviesCoordinator: CreateNewMoviesCoordinator!
+    
+    override func instantiateChildrenCoordinate() {
+        createNewMoviesCoordinator = resolver.resolve(
+            CreateNewMoviesCoordinator.self
         )!
-        return coordinate(to: newMovies)
+    }
+    
+    func goToCreateNewMovies(_ isPresented: Binding<Bool>) -> some View {
+        createNewMoviesCoordinator?.isPresented = isPresented
+        return coordinate(to: createNewMoviesCoordinator)
     }
     
 }

@@ -13,9 +13,8 @@ final class FullScreenPictureAssembly: AutoAssembly {
     dynamic func fullScreenPictureCoordinator() {
         container.register(
             FullScreenPictureCoordinator.self
-        ) { (resolver, isPresented: Binding<Bool>, image: Binding<UIImage?>) -> FullScreenPictureCoordinator in
-            let coordinator = FullScreenPictureCoordinator(resolver, isPresented: isPresented)
-            coordinator.image = image
+        ) { (resolver) -> FullScreenPictureCoordinator in
+            let coordinator = FullScreenPictureCoordinator(resolver)
             return coordinator
         }
     }

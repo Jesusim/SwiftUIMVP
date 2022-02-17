@@ -21,13 +21,18 @@ final class CreateNewMoviesCoordinator: Coordinator<CreateNewMoviesView> {
         )!
     }
     
-    func openImageForFullScreen(_ isPresented: Binding<Bool>, image: Binding<UIImage?>) -> some View {
-        let child = resolver.resolve(
-            FullScreenPictureCoordinator.self,
-            arguments: isPresented,
-            image
+    var fullScreenPictureCoordinator: FullScreenPictureCoordinator!
+    
+    override func instantiateChildrenCoordinate() {
+        fullScreenPictureCoordinator = resolver.resolve(
+            FullScreenPictureCoordinator.self
         )!
-        return coordinate(to: child)
+    }
+    
+    func openImageForFullScreen(_ isPresented: Binding<Bool>, image: Binding<UIImage?>) -> some View {
+        fullScreenPictureCoordinator.isPresented = isPresented
+        fullScreenPictureCoordinator.image = image
+        return coordinate(to: fullScreenPictureCoordinator)
     }
     
 }

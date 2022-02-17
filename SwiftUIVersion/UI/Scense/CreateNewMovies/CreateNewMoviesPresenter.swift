@@ -14,7 +14,7 @@ final class CreateNewMoviesPresenter: Presenter<CreateNewMoviesCoordinator> {
     @Published var description: String = ""
     
     func openImageForFullScreen(_ isPresented: Binding<Bool>, image: Binding<UIImage?>) -> some View {
-        coordinator?.openImageForFullScreen(isPresented, image: image)
+        return coordinator?.openImageForFullScreen(isPresented, image: image)
     }
     
 }

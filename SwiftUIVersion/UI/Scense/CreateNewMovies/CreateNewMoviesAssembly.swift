@@ -13,8 +13,8 @@ final class CreateNewMoviesAssembly: AutoAssembly {
     dynamic func createNewMoviesCoordinator() {
         container.register(
             CreateNewMoviesCoordinator.self
-        ) { (resolver, isPresented: Binding<Bool>) -> CreateNewMoviesCoordinator in
-            let coordinator = CreateNewMoviesCoordinator(resolver, isPresented: isPresented)
+        ) { (resolver) -> CreateNewMoviesCoordinator in
+            let coordinator = CreateNewMoviesCoordinator(resolver)
             return coordinator
         }
     }

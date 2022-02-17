@@ -9,22 +9,22 @@ import Foundation
 import Swinject
 import SwiftUI
 
-protocol AppCordinating {
+protocol AppCoordinating {
     associatedtype V: View
     func start() -> V
 }
 
-final class AppCoordinator: Coordinating, AppCordinating {
+final class AppCoordinator: Coordinator<HomeView>, AppCoordinating {
     
     typealias P = AppCoordinator
     
-    /// Резольвер контейнера Swinject.
-    let resolver: Resolver
-
-    init(_ resolver: Resolver) {
-        self.resolver = resolver
-    }
-    
+//    /// Резольвер контейнера Swinject.
+//    let resolver: Resolver
+//
+//    init(_ resolver: Resolver) {
+//        self.resolver = resolver
+//    }
+//
     func start() -> some View {
         return runHomeView()
     }

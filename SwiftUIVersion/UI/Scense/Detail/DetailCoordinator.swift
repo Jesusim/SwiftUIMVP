@@ -21,8 +21,4 @@ final class DetailCoordinator: Coordinator<DetailView> {
         )!
     }
     
-    deinit {
-        print("\(identifier) deinit DetailCoordinator")
-    }
-    
 }

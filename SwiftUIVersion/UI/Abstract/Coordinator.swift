@@ -53,7 +53,6 @@ protocol Coordinating: BaseCoordinator {
     associatedtype V: View
     associatedtype P: Coordinating
     func start() -> V
-    func shouldStop()
 }
 
 extension Coordinating {
@@ -61,20 +60,16 @@ extension Coordinating {
         get { associatedObject(for: &childrenKey) }
         set { setAssociatedObject(newValue, for: &childrenKey, policy: .weak) }
     }
-    
+
     func coordinate<T: Coordinating>(to coordinator: T) -> some View {
         store(child: coordinator)
         coordinator.parent = self as? T.P
         return coordinator.start()
     }
-    
+
     func stop() {
         children.removeAll()
         parent?.free(child: self)
-    }
-    
-    func shouldStop() {
-        stop()
     }
 }
 
@@ -119,11 +114,7 @@ class Coordinator<V: View>: Coordinating {
     func start() -> some View {
         loadView()
             .onAppear {
-                self.onAppear()
-            }
-            .onDisappear {
-                self.onDisappear()
-                self.shouldStop()
+                self.instantiateChildrenCoordinate()
             }
     }
     
@@ -132,18 +123,31 @@ class Coordinator<V: View>: Coordinating {
         if let isPresented = isPresented {
             switch presentationStyle {
             case .nextView, .parent:
-                NavigationLinkWrapper(destination: instantiateView(), isPresented: isPresented)
+                NavigationLinkWrapper(destination: loadInstantiateView(), isPresented: isPresented)
             case .modalView:
-                ModalLinkWrapper(destination: instantiateView(), isPresented: isPresented)
+                ModalLinkWrapper(destination: loadInstantiateView(), isPresented: isPresented)
             }
         } else {
-            NavigationView { instantiateView() }
+            NavigationView { loadInstantiateView() }
         }
+    }
+    
+    func loadInstantiateView() -> some View  {
+        return instantiateView()
+            .onAppear {
+                self.onAppear()
+            }
+            .onDisappear {
+                self.onDisappear()
+                self.stop()
+            }
     }
     
     func instantiateView() -> V {
         preconditionFailure("Необходимо переопределить эту функции в наследнике!")
     }
+    
+    func instantiateChildrenCoordinate() {}
     
     func onAppear() {}
     

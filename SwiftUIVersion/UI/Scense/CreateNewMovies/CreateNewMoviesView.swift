@@ -50,11 +50,7 @@ struct CreateNewMoviesView: View {
                     .frame(height: 50.0)
                     .background(Color.blue)
                     .foregroundColor(.white)
-                    Image(uiImage: image ?? UIImage())
-                        .resizable()
-                        .frame(width: 50.0, height: 50.0)
-                        .border(.gray)
-                    NavigationButton(contentView: Text("Show image")) { isPresented in
+                    NavigationButton(contentView: imageView) { isPresented in
                         presenter.openImageForFullScreen(isPresented, image: $image)
                     }
                 }
@@ -64,5 +60,12 @@ struct CreateNewMoviesView: View {
                 ImagePicker(image: $image)
             }
         }
+    }
+    
+    var imageView: some View {
+        Image(uiImage: image ?? UIImage())
+            .resizable()
+            .frame(width: 50.0, height: 50.0)
+            .border(.gray)
     }
 }

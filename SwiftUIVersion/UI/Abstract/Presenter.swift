@@ -16,6 +16,6 @@ class Presenter<C: Coordinating>: ObservableObject {
     }
     
     deinit {
-        coordinator?.shouldStop()
+        coordinator?.stop()
     }
 }
