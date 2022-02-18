@@ -8,14 +8,25 @@
 import Foundation
 import SwiftUI
 
-struct Movie: Identifiable {
-    var id: String = UUID().uuidString
-    var name: String
-}
-
 final class HomePresenter: Presenter<HomeCoordinator> {
     
-    @Published var movies: [Movie] = [Movie(name: "Master")]
+    @Published var movies: [Movie] = []
+    var coreDataServing: CoreDataServing
+    
+    init(
+        coordinator: HomeCoordinator,
+        coreDataServing: CoreDataServing
+    ) {
+        self.coreDataServing = coreDataServing
+        super.init(coordinator: coordinator)
+    }
+    
+    func loadMovies() {
+        guard let movies = coreDataServing.fetchObject(by: Movie.self) else {
+            return
+        }
+        self.movies = movies
+    }
     
     func goToDetail(_ isPresented: Binding<Bool>) -> some View {
         return coordinator?.goToDetail(isPresented)

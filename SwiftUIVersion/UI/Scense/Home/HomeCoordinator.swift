@@ -18,25 +18,27 @@ final class HomeCoordinator: Coordinator<HomeView> {
         )!
     }
     
-    func goToDetail(_ isPresented: Binding<Bool>) -> some View {
-        let detailCoord = resolver.resolve(
-            DetailCoordinator.self,
-            argument: isPresented
-        )!
-        return coordinate(to: detailCoord)
-    }
-    
+    var detailCoordinator: DetailCoordinator!
     var createNewMoviesCoordinator: CreateNewMoviesCoordinator!
     
     override func instantiateChildrenCoordinate() {
         createNewMoviesCoordinator = resolver.resolve(
             CreateNewMoviesCoordinator.self
         )!
+        
+        detailCoordinator = resolver.resolve(
+            DetailCoordinator.self
+        )!
     }
     
     func goToCreateNewMovies(_ isPresented: Binding<Bool>) -> some View {
         createNewMoviesCoordinator?.isPresented = isPresented
         return coordinate(to: createNewMoviesCoordinator)
+    }
+    
+    func goToDetail(_ isPresented: Binding<Bool>) -> some View {
+        detailCoordinator.isPresented = isPresented
+        return coordinate(to: detailCoordinator)
     }
     
 }

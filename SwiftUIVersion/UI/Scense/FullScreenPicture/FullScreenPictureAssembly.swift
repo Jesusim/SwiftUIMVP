@@ -23,19 +23,7 @@ final class FullScreenPictureAssembly: AutoAssembly {
         container.register(
             FullScreenPicture.self
         ) { (resolver, coordinator: FullScreenPictureCoordinator, image: Binding<UIImage?>) in
-            let presenter = resolver.resolve(
-                FullScreenPicturePresenter.self,
-                argument: coordinator
-            )!
-            return FullScreenPicture(presenter: presenter, image: image)
-        }
-    }
-    
-    dynamic func createNewMoviesPresenter() {
-        container.register(
-            FullScreenPicturePresenter.self
-        ) { (resolver, coordinator: FullScreenPictureCoordinator) in
-            return FullScreenPicturePresenter(coordinator: coordinator)
+            return FullScreenPicture(image: image)
         }
     }
     

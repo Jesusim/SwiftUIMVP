@@ -22,7 +22,7 @@ struct HomeView: View {
         List {
             ForEach(presenter.movies) { item in
                 NavigationButton(
-                    contentView: Text(item.name)
+                    contentView: Text(item.name!)
                 ) { isPresented in
                     presenter.goToDetail(isPresented)
                 }.foregroundColor(.red)
@@ -33,6 +33,8 @@ struct HomeView: View {
             ) { isPresented in
                 presenter.goToCreateNewMovies(isPresented)
             }
+        }.onAppear {
+            presenter.loadMovies()
         }
     }
 }

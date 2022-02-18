@@ -34,7 +34,11 @@ final class HomeAssembly: AutoAssembly {
         container.register(
             HomePresenter.self
         ) { (resolver, coordinator: HomeCoordinator) in
-            return HomePresenter(coordinator: coordinator)
+            let coreDataServing = resolver.resolve(CoreDataServing.self)!
+            return HomePresenter(
+                coordinator: coordinator,
+                coreDataServing: coreDataServing
+            )
         }
     }
 

@@ -13,8 +13,8 @@ final class DetailAssembly: AutoAssembly {
     dynamic func homeCoordinator() {
         container.register(
             DetailCoordinator.self
-        ) { (resolver, isPresented: Binding<Bool>) -> DetailCoordinator in
-            let coordinator = DetailCoordinator(resolver, isPresented: isPresented)
+        ) { (resolver) -> DetailCoordinator in
+            let coordinator = DetailCoordinator(resolver)
             return coordinator
         }
     }

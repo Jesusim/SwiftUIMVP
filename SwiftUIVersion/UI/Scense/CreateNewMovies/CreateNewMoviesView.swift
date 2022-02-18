@@ -11,7 +11,6 @@ struct CreateNewMoviesView: View {
     
     @ObservedObject var presenter: CreateNewMoviesPresenter
     @State private var showingImagePicker = false
-    @State private var image: UIImage? = UIImage(named: "no_image")
     
     init(
         presenter: CreateNewMoviesPresenter
@@ -51,19 +50,22 @@ struct CreateNewMoviesView: View {
                     .background(Color.blue)
                     .foregroundColor(.white)
                     NavigationButton(contentView: imageView) { isPresented in
-                        presenter.openImageForFullScreen(isPresented, image: $image)
+                        presenter.openImageForFullScreen(isPresented, image: $presenter.image)
                     }
+                }
+                NavigationLink(destination: DetailView()) {
+                    Label("Work Folder", systemImage: "folder")
                 }
             }
             .navigationTitle("Create movies")
             .sheet(isPresented: $showingImagePicker) {
-                ImagePicker(image: $image)
+                ImagePicker(image: $presenter.image)
             }
         }
     }
     
     var imageView: some View {
-        Image(uiImage: image ?? UIImage())
+        Image(uiImage: presenter.image ?? UIImage())
             .resizable()
             .frame(width: 50.0, height: 50.0)
             .border(.gray)

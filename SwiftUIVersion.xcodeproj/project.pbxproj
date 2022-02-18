@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2026D82B27B161CB0062DF36 /* FullScreenPicturePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2026D82A27B161CA0062DF36 /* FullScreenPicturePresenter.swift */; };
 		2027E13D26FC44E80074151D /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 2027E13C26FC44E80074151D /* Swinject */; };
 		2027E14726FC4D5E0074151D /* AutoAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2027E14626FC4D5E0074151D /* AutoAssembly.swift */; };
 		2027E15126FC64EB0074151D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2027E15026FC64EB0074151D /* HomeView.swift */; };
@@ -23,6 +22,9 @@
 		205FC4F326CB6D20003E6DEF /* SwiftUITestProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 205FC4F126CB6D20003E6DEF /* SwiftUITestProject.xcdatamodeld */; };
 		205FC4FE26CB6D20003E6DEF /* SwiftUITestProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205FC4FD26CB6D20003E6DEF /* SwiftUITestProjectTests.swift */; };
 		205FC50926CB6D20003E6DEF /* SwiftUITestProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205FC50826CB6D20003E6DEF /* SwiftUITestProjectUITests.swift */; };
+		209E053227BF854E00310EE8 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209E053127BF854E00310EE8 /* CoreDataService.swift */; };
+		209E053427BF877D00310EE8 /* ServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209E053327BF877D00310EE8 /* ServiceAssembly.swift */; };
+		209E053827BF8BE500310EE8 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209E053727BF8BE500310EE8 /* Movie.swift */; };
 		20C6314D2797FBD400951D8F /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C6314C2797FBD400951D8F /* AppCoordinator.swift */; };
 		20C631522798242900951D8F /* AppAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C631512798242900951D8F /* AppAssembly.swift */; };
 		20C631542798433E00951D8F /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C631532798433E00951D8F /* HomePresenter.swift */; };
@@ -59,7 +61,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2026D82A27B161CA0062DF36 /* FullScreenPicturePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenPicturePresenter.swift; sourceTree = "<group>"; };
 		2027E14626FC4D5E0074151D /* AutoAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoAssembly.swift; sourceTree = "<group>"; };
 		2027E15026FC64EB0074151D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		2027E1672701B5C90074151D /* SwinjectConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwinjectConfigurator.swift; sourceTree = "<group>"; };
@@ -80,6 +81,9 @@
 		205FC50426CB6D20003E6DEF /* SwiftUIVersionTestProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftUIVersionTestProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		205FC50826CB6D20003E6DEF /* SwiftUITestProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUITestProjectUITests.swift; sourceTree = "<group>"; };
 		205FC50A26CB6D20003E6DEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		209E053127BF854E00310EE8 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		209E053327BF877D00310EE8 /* ServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAssembly.swift; sourceTree = "<group>"; };
+		209E053727BF8BE500310EE8 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		20C6314C2797FBD400951D8F /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		20C631512798242900951D8F /* AppAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAssembly.swift; sourceTree = "<group>"; };
 		20C631532798433E00951D8F /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
@@ -145,8 +149,8 @@
 		2027E14526FC4C150074151D /* Assembly */ = {
 			isa = PBXGroup;
 			children = (
-				2027E14626FC4D5E0074151D /* AutoAssembly.swift */,
-				2027E1672701B5C90074151D /* SwinjectConfigurator.swift */,
+				209E053527BF878B00310EE8 /* Swinject */,
+				209E053327BF877D00310EE8 /* ServiceAssembly.swift */,
 			);
 			path = Assembly;
 			sourceTree = "<group>";
@@ -211,6 +215,7 @@
 				2042E6BF279AAECF000F32C2 /* AppStartMode.swift */,
 				20C631512798242900951D8F /* AppAssembly.swift */,
 				20C6314C2797FBD400951D8F /* AppCoordinator.swift */,
+				209E053627BF8BD200310EE8 /* Entity */,
 				2027E14426FC4BF70074151D /* BusinessLogic */,
 				2027E14126FC461D0074151D /* UI */,
 				205FC51726CB6FBF003E6DEF /* Resources */,
@@ -256,9 +261,27 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		209E053527BF878B00310EE8 /* Swinject */ = {
+			isa = PBXGroup;
+			children = (
+				2027E14626FC4D5E0074151D /* AutoAssembly.swift */,
+				2027E1672701B5C90074151D /* SwinjectConfigurator.swift */,
+			);
+			path = Swinject;
+			sourceTree = "<group>";
+		};
+		209E053627BF8BD200310EE8 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				209E053727BF8BE500310EE8 /* Movie.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 		20BED91A27A283A400AA9180 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				209E053127BF854E00310EE8 /* CoreDataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -289,7 +312,6 @@
 			children = (
 				20C9401827B11DD4002606B1 /* FullScreenPictureAssembly.swift */,
 				20C9401A27B11DEB002606B1 /* FullScreenPictureCoordinator.swift */,
-				2026D82A27B161CA0062DF36 /* FullScreenPicturePresenter.swift */,
 				20C9401627B11D6D002606B1 /* FullScreenPicture.swift */,
 			);
 			path = FullScreenPicture;
@@ -440,12 +462,14 @@
 				20C798F427A11BF100A05F4F /* Presenter.swift in Sources */,
 				2027E15126FC64EB0074151D /* HomeView.swift in Sources */,
 				20C9401B27B11DEB002606B1 /* FullScreenPictureCoordinator.swift in Sources */,
-				2026D82B27B161CB0062DF36 /* FullScreenPicturePresenter.swift in Sources */,
 				20C9400F27B10BD8002606B1 /* ImagePicker.swift in Sources */,
 				2027E16E2701C2EA0074151D /* HomeCoordinator.swift in Sources */,
 				20C631522798242900951D8F /* AppAssembly.swift in Sources */,
+				209E053427BF877D00310EE8 /* ServiceAssembly.swift in Sources */,
 				20C6315A279A82FA00951D8F /* DetailCoordinator.swift in Sources */,
+				209E053827BF8BE500310EE8 /* Movie.swift in Sources */,
 				20C631582799695E00951D8F /* DetailView.swift in Sources */,
+				209E053227BF854E00310EE8 /* CoreDataService.swift in Sources */,
 				20C798F227A10F3600A05F4F /* AssociatedObject.swift in Sources */,
 				20C6314D2797FBD400951D8F /* AppCoordinator.swift in Sources */,
 				2052DE3227AAC85C003D8FEE /* CreateNewMoviesAssembly.swift in Sources */,
